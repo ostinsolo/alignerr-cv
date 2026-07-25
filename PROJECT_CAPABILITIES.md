@@ -95,6 +95,17 @@ Wording for CV: **covered in industry press** (not “reviewed by” unless a fu
 | Gearnews | Dynamic Split Module | https://www.gearnews.de/elektron-tal-ni-ableton-sound-synth/ |
 | Gearnews | Pendolo | https://www.gearnews.de/elektron-u-he-ni-moog-ableton-sounds/ |
 
+### 3.3c Venues / public media (Macrowave / Cacao)
+
+| Item | Detail |
+|------|--------|
+| Role | Artistic Director — Cacao Discoteca (Macrowave / Basement era, Avellino area) |
+| Public media | TV interview appearance (Artistic Director of Cacao Discoteca) |
+| YouTube (clean) | https://www.youtube.com/watch?v=9GRkuunL9gs |
+| YouTube (timestamped) | https://www.youtube.com/watch?v=9GRkuunL9gs&t=1s |
+
+CV wording: *Public media appearance as Artistic Director of Cacao Discoteca (TV interview).* — hyperlink "TV interview" to the clean URL.
+
 ### 3.4 AUDIOENCE
 
 - **What:** Real-time remote collaboration plug-in (audio, MIDI, sync); product direction + coordinated VST3/AU work (WebRTC, Ableton Link).
