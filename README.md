@@ -18,6 +18,9 @@ Curriculum vitae and supporting materials for Alignerr applications. Agostino Sc
 | `Agostino_Scalzullo_Alignerr_CV.docx` | Alignerr-oriented CV (Word) |
 | `PROJECT_CAPABILITIES.md` | Companion overview of projects and technical capabilities |
 
+
+> Product naming: commercial Max for Live separation product is referred to as **Dynamic Split Module** only (not alternate internal names).
+
 ## Press
 
 - [Sound On Sound — Dynamic Split Module](https://www.soundonsound.com/news/vstopia-announce-dynamic-split-module-ableton)
