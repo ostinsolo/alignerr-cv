@@ -32,7 +32,7 @@ JUCE/C++ networked collaboration plug-in architecture combining real-time audio,
 [Official project](https://vstopia.com/audioence) · [Technical manual](https://vstopia.com/audioence-manual)
 
 ### Native Max / MPE / Hardware Systems
-Native C++ Max externals and hardware-integration work spanning multitouch, MPE, computer sensors, Arduino/ESP32 microcontrollers, MCP23017 I/O expansion, Depth Anything and AprilTag workflows. Includes Objective-C++ bridge layers, platform APIs, firmware integration/modification, native model/runtime integration and ongoing JUCE VST3/AU migration.
+Native C++ Max externals and hardware-integration work spanning multitouch, MPE, computer sensors, Arduino/ESP32 microcontrollers, MCP23017 I/O expansion, Depth Anything and AprilTag workflows. Includes Objective-C++ bridge layers, platform APIs, firmware integration/modification, native model/runtime integration and ongoing JUCE VST3/AU migration. Earlier physical-computing prototypes included an MCP23017 encoder/button controller, 12-channel capacitive-touch MIDI control, ribbon-sensor pitch control, and phone/accelerometer-controlled servo positioning, first over an external Bluetooth module and later ESP32.
 [Public product catalogue](https://ostinsolo.co.uk/devices)
 
 ### SoundCloner — Private R&D
