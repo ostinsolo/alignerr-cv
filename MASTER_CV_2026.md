@@ -32,7 +32,7 @@ A recurring focus is turning experimental technologies into practical musical sy
 
 **Networking / Backend:** WebRTC · UDP · TCP · WebSockets · Socket.IO · REST APIs · MongoDB · Opus · RTP MIDI · OSC · real-time communication · cloud deployment
 
-**Systems / Hardware:** macOS native integration · Objective-C++ bridging · Apple frameworks · MIDI SysEx · AVFoundation · Core ML · Apple Neural Engine · IOKit / IOUSBHost · shared memory · USB devices · multitouch · cameras · sensors · Developer ID signing · Hardened Runtime · notarization
+**Systems / Hardware:** macOS native integration · Objective-C++ bridging · Apple frameworks · Arduino · ESP32 · MCP23017 I/O expansion · microcontroller firmware · MIDI SysEx · Bluetooth control · capacitive touch · servo/actuator control · AVFoundation · Core ML · Apple Neural Engine · IOKit / IOUSBHost · shared memory · USB devices · multitouch · cameras · sensors · Developer ID signing · Hardened Runtime · notarization
 
 **ML / Deep Learning / Computer Vision:** Neural audio processing · BS-RoFormer · Demucs · MossFormer2 · ECAPA speaker embeddings · target-speaker extraction · speaker enrollment / identity tracking · CLAP/audio embeddings · classification · similarity retrieval · Core ML · MLX · MediaPipe Tasks Vision · ARKit · Depth Anything · AprilTag · real-time face/landmark tracking · model deployment, distillation and optimisation
 
@@ -86,6 +86,17 @@ Developed a family of native Max/MSP externals that expose multitouch input and 
 - **`accelerometer`** — accelerometer data, including orientation-derived roll/pitch information for musical mapping.
 
 The work spans native hardware communication, multitouch state management, pressure and gesture processing, MPE voice allocation and platform-specific macOS/Windows integration.
+
+### Earlier Physical Computing & Hardware Prototyping
+**Arduino · ESP32 · MCP23017 · Capacitive Touch · Sensors · MIDI · Bluetooth · Servo Control**
+
+Earlier physical-computing work established a practical hardware base before the more recent native Max, plug-in and computer-vision systems. Prototypes included microcontroller firmware, sensor acquisition, physical controls, MIDI mapping and electromechanical control rather than software-only simulations.
+
+Built an **Arduino/MCP23017 controller with eight rotary encoders and four push-button inputs**, using I/O expansion to increase the number of physical controls available from the microcontroller. Additional musical-control experiments included a **ribbon/position sensor mapped to MIDI pitch control** and a **12-channel capacitive-touch MIDI controller** in which changes at individual conductive inputs triggered note/control events.
+
+Developed a **servo-driven projector positioning platform** controlled from a phone, supporting both accelerometer-based motion input and direct on-screen controls for pan/tilt movement. The communication path was first prototyped with an external Bluetooth module and later reworked around an **ESP32 with integrated Bluetooth**.
+
+These projects involved wiring, sensor/control mapping, firmware programming and modification, microcontroller-to-host communication, MIDI generation and physical debugging across electronics and software boundaries.
 
 ### Native macOS Integration & Runtime Bridging
 **C · C++ · Objective-C++ · Max SDK · Apple Frameworks · Hardware APIs · Native ML Runtimes**
