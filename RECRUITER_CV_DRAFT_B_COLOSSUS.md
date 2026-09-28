@@ -25,7 +25,7 @@ Neural separation, restoration and web-sampling environment for Ableton Live, cr
 [Product](https://vstopia.com/max-for-live-devices/dynamic-split-module) · [Sound On Sound](https://www.soundonsound.com/news/vstopia-announce-dynamic-split-module-ableton) · [Cycling ’74](https://cycling74.com/projects/dynamic-split-module-websampler-with-63-audio-separation-models-in-ableton-1)
 
 ### Native RoFormer External & VST3/AU — Work in Progress
-Native C++/MLX implementation bringing six-stem BS-RoFormer separation into a Max/MSP external and an in-development plug-in architecture. Across tested Apple Silicon workloads, optimisation achieved a **median 1.85× speedup**, reaching **2.5× on MelBand RoFormer**; native six-stem BS-RoFormer achieved **RTF ≈ 0.36 (~2.8× real time)** on M4 Pro with bit-exact parity against the Python MLX reference.
+Native C++/MLX implementation bringing six-stem BS-RoFormer separation into a Max/MSP external and an in-development plug-in architecture. Separate Apple Silicon benchmarking of the MLX implementation against the python-audio-separator MPS baseline showed a **median 1.85× speedup**, reaching **2.5× on MelBand RoFormer**. The native C++/MLX six-stem runtime achieved **RTF ≈ 0.36 (~2.8× real time)** on M4 Pro with bit-exact parity to the Python MLX reference; C++ and Python MLX performance were essentially matched in the fixed benchmark.
 
 ### AUDIOENCE
 JUCE/C++ networked collaboration plug-in architecture combining real-time audio, MIDI, WebRTC/P2P communication, Opus/PCM modes, resampling and DAW synchronisation across macOS and Windows.
