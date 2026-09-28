@@ -1,0 +1,748 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Agostino Scalzullo — Engineering Portfolio</title><style>
+
+:root{
+  --bg:#000;
+  --panel:#080808;
+  --panel-2:#0d0d0d;
+  --ink:#f5f5f2;
+  --muted:#8f8f8f;
+  --line:#292929;
+  --line-strong:#454545;
+  --accent:#f5f5f2;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font:16px/1.62 "Helvetica Neue",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:#f5f5f2;color:#000}
+.page{
+  max-width:1280px;
+  margin:0 auto;
+  background:var(--bg);
+  padding:28px 64px 96px;
+}
+a{color:var(--ink);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:4px}
+h1{
+  margin:46px 0 12px;
+  max-width:940px;
+  font-size:clamp(48px,7vw,84px);
+  line-height:.95;
+  letter-spacing:-.055em;
+  font-weight:500;
+}
+h2{
+  margin:72px 0 18px;
+  padding:13px 0 0;
+  border-top:1px solid var(--line-strong);
+  border-bottom:0;
+  color:var(--ink);
+  font:600 13px/1.2 "SFMono-Regular",Menlo,Consolas,monospace;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+p{margin:7px 0}
+strong{font-weight:650;color:#fff}
+code{
+  background:#101010;
+  color:#e8e8e5;
+  padding:2px 5px;
+  border:1px solid #242424;
+  border-radius:0;
+  font-family:"SFMono-Regular",Menlo,Consolas,monospace;
+}
+.language-switcher{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px 12px;
+  margin:0 0 18px;
+  padding:0 64px 13px 0;
+  border-bottom:1px solid var(--line);
+}
+.lang-button{
+  appearance:none;
+  -webkit-appearance:none;
+  border:0;
+  padding:0;
+  background:transparent;
+  color:#777;
+  cursor:pointer;
+  font:500 10px/1.25 "SFMono-Regular",Menlo,Consolas,monospace;
+  letter-spacing:.08em;
+  white-space:nowrap;
+  transition:color .18s ease,opacity .18s ease;
+}
+.lang-button .flag{
+  font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;
+  font-size:16px;
+  vertical-align:-1px;
+  margin-right:4px;
+}
+.lang-button:hover,.lang-button[aria-pressed="true"]{color:#fff}
+.lang-button[aria-pressed="true"]{text-decoration:underline;text-underline-offset:4px}
+.hero{
+  min-height:70px;
+  display:flex;
+  justify-content:space-between;
+  gap:28px;
+  align-items:flex-start;
+  padding:3px 0 18px;
+  border-bottom:1px solid var(--line);
+}
+.kicker{
+  color:#fff;
+  font:600 12px/1.2 "SFMono-Regular",Menlo,Consolas,monospace;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px 15px;
+  margin:13px 0 0;
+  max-width:760px;
+}
+.chips span{
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  color:#777;
+  font:500 11px/1.35 "SFMono-Regular",Menlo,Consolas,monospace;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.hero-actions{
+  display:flex;
+  gap:18px;
+  align-items:center;
+  justify-content:flex-end;
+  flex-wrap:wrap;
+  font:500 12px/1.25 "SFMono-Regular",Menlo,Consolas,monospace;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.download-cv{
+  display:inline-block;
+  padding:10px 13px;
+  border:1px solid #f4f4f0;
+  border-radius:0;
+  background:#f4f4f0;
+  color:#000;
+  font-weight:650;
+}
+.download-cv:hover{
+  background:#000;
+  color:#fff;
+  text-decoration:none;
+  filter:none;
+}
+.portfolio-index{
+  margin:44px 0 0;
+  padding:16px 0 18px;
+  border-top:1px solid var(--line-strong);
+  border-bottom:1px solid var(--line);
+  border-left:0;
+  border-right:0;
+  border-radius:0;
+  background:transparent;
+}
+.portfolio-index h2{
+  margin:0 0 14px;
+  padding:0;
+  border:0;
+  font-size:12px;
+}
+.index-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:7px 30px;
+}
+.index-grid p{
+  margin:0;
+  color:#707070;
+  font:400 12px/1.55 "SFMono-Regular",Menlo,Consolas,monospace;
+}
+.index-grid a{color:#d8d8d5;font-weight:600}
+.site-menu-button{
+  position:fixed;
+  top:22px;
+  right:22px;
+  width:46px;
+  height:46px;
+  padding:0;
+  border:1px solid #3a3a3a;
+  border-radius:50%;
+  background:rgba(5,5,5,.94);
+  color:#fff;
+  cursor:pointer;
+  z-index:1002;
+  display:grid;
+  place-items:center;
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  transition:border-color .2s ease,background .2s ease;
+}
+.site-menu-button:hover{border-color:#fff;background:#0c0c0c}
+.menu-bars{display:block;width:18px;height:13px;position:relative}
+.menu-bars span{
+  position:absolute;
+  left:0;
+  width:18px;
+  height:1px;
+  background:#fff;
+  transform-origin:center;
+  transition:transform .22s ease,opacity .18s ease;
+}
+.menu-bars span:nth-child(1){top:0}
+.menu-bars span:nth-child(2){top:6px}
+.menu-bars span:nth-child(3){top:12px}
+body.menu-open .menu-bars span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+body.menu-open .menu-bars span:nth-child(2){opacity:0}
+body.menu-open .menu-bars span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.site-menu-panel{
+  position:fixed;
+  top:0;
+  right:0;
+  width:min(360px,88vw);
+  height:100vh;
+  height:100dvh;
+  padding:88px 30px 32px;
+  background:#050505;
+  border-left:1px solid var(--line-strong);
+  transform:translateX(100%);
+  transition:transform .26s cubic-bezier(.22,.61,.36,1);
+  z-index:1001;
+  overflow-y:auto;
+}
+body.menu-open .site-menu-panel{transform:translateX(0)}
+.site-menu-title{
+  margin:0 0 18px;
+  color:#707070;
+  font:600 10px/1.2 "SFMono-Regular",Menlo,Consolas,monospace;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.site-menu-panel a{
+  display:block;
+  padding:11px 0;
+  border-top:1px solid var(--line);
+  color:#b8b8b3;
+  font:500 12px/1.3 "SFMono-Regular",Menlo,Consolas,monospace;
+  letter-spacing:.04em;
+  text-decoration:none;
+  transition:color .18s ease,padding-left .18s ease;
+}
+.site-menu-panel a:last-child{border-bottom:1px solid var(--line)}
+.site-menu-panel a:hover{color:#fff;padding-left:5px;text-decoration:none}
+.site-menu-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.48);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .22s ease;
+  z-index:1000;
+}
+body.menu-open .site-menu-overlay{opacity:1;pointer-events:auto}
+body.menu-open{overflow:hidden}
+.project{
+  border-top:1px solid var(--line);
+  padding:0;
+}
+.project:last-of-type{border-bottom:1px solid var(--line)}
+summary{
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  padding:17px 0;
+  font-size:18px;
+  font-weight:520;
+  letter-spacing:-.01em;
+  list-style:none;
+}
+summary::-webkit-details-marker{display:none}
+summary span{transition:color .4s ease}
+summary:hover span,.project[open] > summary span{color:#fff}
+@keyframes exploreFade{
+  0%,15%{
+    color:#707070;
+    text-shadow:0 0 0 rgba(255,255,255,0);
+  }
+  85%,100%{
+    color:#fff;
+    text-shadow:0 0 12px rgba(255,255,255,.22);
+  }
+}
+summary b{
+  color:#777;
+  font:500 10px/1.2 "SFMono-Regular",Menlo,Consolas,monospace;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  animation:exploreFade 1.2s ease-in-out infinite alternate;
+}
+summary:hover b,.project[open] > summary b{
+  color:#fff;
+  text-shadow:0 0 14px rgba(255,255,255,.3);
+}
+@media (prefers-reduced-motion:reduce){
+  summary b{animation:none;color:#d8d8d5}
+}
+.project-body{
+  max-width:980px;
+  padding:0 0 24px 20px;
+  border-left:1px solid var(--line-strong);
+  color:#bdbdb8;
+}
+.project-body p{max-width:930px}
+.bullet{margin-left:0;color:#aaa}
+.maplink{
+  margin-top:20px;
+  padding:12px 0 0;
+  border:0;
+  border-top:1px solid var(--line);
+  border-radius:0;
+  background:transparent;
+  font:600 10px/1.3 "SFMono-Regular",Menlo,Consolas,monospace;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.architecture{
+  margin:18px 0 10px;
+  padding:22px 0 0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+}
+.architecture-intro{
+  max-width:780px;
+  color:var(--muted);
+  margin-bottom:24px;
+}
+.arch-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+}
+.arch-root{
+  grid-column:1/-1;
+  text-align:left;
+  padding:18px 19px;
+  border:0;
+  border-radius:0;
+  background:#050505;
+  font-size:18px;
+  font-weight:550;
+}
+.arch-card{
+  padding:17px 18px;
+  border:0;
+  border-radius:0;
+  background:#080808;
+  min-height:126px;
+}
+.arch-card strong{
+  display:block;
+  margin-bottom:8px;
+  color:#fff;
+  font:600 11px/1.35 "SFMono-Regular",Menlo,Consolas,monospace;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.arch-card span{
+  display:block;
+  color:#818181;
+  font-size:13px;
+  line-height:1.55;
+}
+.arch-card code{font-size:11px}
+.architecture .maplink{text-align:left;margin:20px 0 0}
+section>ul{color:#b8b8b3}
+li{margin:4px 0}
+@media(max-width:760px){
+  .language-switcher{padding-right:54px;gap:7px 10px}
+  .site-menu-button{top:14px;right:14px;width:44px;height:44px}
+  .site-menu-panel{padding:78px 22px 28px}
+  .page{padding:20px 20px 64px}
+  .hero{display:block}
+  .hero-actions{justify-content:flex-start;margin-top:22px}
+  h1{margin-top:36px;font-size:48px}
+  .architecture{margin:16px 0}
+  .arch-grid{grid-template-columns:1fr}
+  .arch-root{grid-column:1}
+  .index-grid{grid-template-columns:1fr}
+  h2{margin-top:54px}
+}
+@media print{
+  .site-menu-button,.site-menu-panel,.site-menu-overlay{display:none!important}
+  :root{--bg:#fff;--panel:#fff;--panel-2:#fff;--ink:#111;--muted:#555;--line:#bbb;--line-strong:#777;--accent:#111}
+  body,.page{background:#fff;color:#111}
+  .page{margin:0;max-width:none;padding:14mm}
+  .hero{border-color:#aaa}
+  .chips span,.index-grid p,summary b,.project-body,.arch-card span{color:#444}
+  a,strong,.index-grid a,.arch-card strong{color:#111}
+  .download-cv{background:#fff;color:#111;border-color:#111}
+  .architecture,.arch-root,.arch-card{background:#fff}
+  .project{break-inside:avoid}
+  .project:not([open]) .project-body{display:block}
+}
+
+</style></head><body>
+<button class="site-menu-button" type="button" aria-label="Open site navigation" aria-controls="site-menu" aria-expanded="false">
+  <span class="menu-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+</button>
+<div class="site-menu-overlay" aria-hidden="true"></div>
+<nav class="site-menu-panel" id="site-menu" aria-label="Site navigation">
+  <div class="site-menu-title">Portfolio Index</div>
+  <a href="#profile">Profile</a>
+  <a href="#core-technologies">Core Technologies</a>
+  <a href="#experience">Professional Experience</a>
+  <a href="#native-engineering">Native Engineering</a>
+  <a href="#architecture">Portfolio Architecture</a>
+  <a href="#technical-work">Selected Technical Work</a>
+  <a href="#validation">Validation &amp; Testing</a>
+  <a href="#additional-rd">Additional R&amp;D</a>
+  <a href="#web-platform">Web / Platform Engineering</a>
+  <a href="#track-record">Commercial / Industry Track Record</a>
+  <a href="#interests">Areas of Interest</a>
+</nav>
+<main class="page">
+<nav class="language-switcher" aria-label="Language">
+  <button class="lang-button" type="button" data-lang="en" aria-pressed="true" title="English"><span class="flag">🇬🇧</span>EN</button>
+  <button class="lang-button" type="button" data-lang="it" aria-pressed="false" title="Italiano"><span class="flag">🇮🇹</span>IT</button>
+  <button class="lang-button" type="button" data-lang="es" aria-pressed="false" title="Español"><span class="flag">🇪🇸</span>ES</button>
+  <button class="lang-button" type="button" data-lang="de" aria-pressed="false" title="Deutsch"><span class="flag">🇩🇪</span>DE</button>
+  <button class="lang-button" type="button" data-lang="fr" aria-pressed="false" title="Français"><span class="flag">🇫🇷</span>FR</button>
+  <button class="lang-button" type="button" data-lang="zh" aria-pressed="false" title="中文"><span class="flag">🇨🇳</span>中文</button>
+  <button class="lang-button" type="button" data-lang="ja" aria-pressed="false" title="日本語"><span class="flag">🇯🇵</span>日本語</button>
+</nav><div class="hero"><div><div class="kicker">Engineering Portfolio · 2026</div><div class="chips"><span>C++</span><span>JUCE</span><span>Max/MSP</span><span>DSP</span><span>Audio ML</span><span>Deep Learning</span><span>Computer Vision</span><span>Swift / iOS</span><span>WebRTC</span><span>UDP / TCP</span><span>Native macOS</span></div></div><div class="hero-actions"><a class="download-cv" href="cv/Agostino_Scalzullo_CV_en.pdf" download="Agostino_Scalzullo_CV_en.pdf">Download CV PDF ↓</a><a href="https://github.com/ostinsolo/ostin-solo-portfolio/blob/main/MASTER_CV_2026.md">Full source CV ↗</a></div></div><h1>Agostino Scalzullo</h1>
+<p><strong>Audio Software &amp; Creative Technology Engineer · C++ · DSP · JUCE · Audio ML · Deep Learning · Real-Time Systems</strong></p>
+<p>London, UK  </p>
+<p><strong>OSTIN SOLO · Founder, VSTOPIA</strong></p>
+<p><strong>Email:</strong> contact@ostinsolo.co.uk  </p>
+<p><strong>VSTOPIA:</strong> contacts.vstopia@gmail.com  </p>
+<p><strong>GitHub:</strong> <code>ostinsolo</code> · <code>VSTOPIA</code></p>
+<nav class="portfolio-index" aria-label="Portfolio index">
+<h2>Index</h2>
+<div class="index-grid">
+<p><a href="#profile">Profile</a> — engineering focus and professional scope.</p>
+<p><a href="#core-technologies">Core Technologies</a> — languages, DSP, ML, systems and hardware.</p>
+<p><a href="#experience">Experience</a> — VSTOPIA, OSTIN SOLO and creative direction.</p>
+<p><a href="#native-engineering">Native Engineering</a> — Max externals, C++, JUCE and plug-ins.</p>
+<p><a href="#architecture">Portfolio Architecture</a> — how the main technical areas connect.</p>
+<p><a href="#technical-work">Selected Technical Work</a> — principal commercial and R&amp;D projects.</p>
+<p><a href="#validation">Validation</a> — benchmarking, profiling and cross-platform testing.</p>
+<p><a href="#web-platform">Web / Platform</a> — backend, deployment, licensing and realtime services.</p>
+<p><a href="#track-record">Track Record</a> — products, coverage and industry interaction.</p>
+<p><a href="#interests">Areas of Interest</a> — current engineering and research directions.</p>
+</div>
+</nav>
+<h2 id="profile">Profile</h2>
+<p>Audio software developer and electronic musician working across <strong>C++, Max/MSP, JUCE, DSP, real-time audio, networking, hardware integration, computer vision and audio machine learning</strong>.</p>
+<p>Founder of <strong>VSTOPIA</strong>, an independent platform for music-production software, and developer behind the <strong>OSTIN SOLO</strong> range of commercial audio tools.</p>
+<p>Work spans the complete engineering path from low-level hardware and operating-system APIs through native Max externals and DSP engines to VST3/AU plug-ins, networked audio systems, cloud infrastructure, deployment, licensing and commercial distribution.</p>
+<p>Alongside released products, maintains an extensive R&amp;D portfolio covering <strong>Max/RNBO systems, native DSP, neural audio processing, real-time source separation, computer vision, WebRTC, hardware protocols, interactive visual systems, audio embeddings/classification, empirical evaluation and custom developer tooling</strong>.</p>
+<p>A recurring focus is turning experimental technologies into practical musical systems while using <strong>benchmarks, controlled experiments, profiling and quantitative evaluation</strong> to guide architecture and optimisation.</p>
+<h2 id="core-technologies">Core Technologies</h2>
+<p><strong>Languages / Frameworks:</strong> C · C++ · Objective-C++ · Swift · SwiftUI · JUCE · Max/MSP · Max SDK / Min API · JavaScript · TypeScript · Python · Node.js · CMake</p>
+<p><strong>Audio / DSP:</strong> Real-time audio processing · VST3 / AU · synthesis · source separation · STFT · spectral processing · spatial audio · MIDI / MPE · audio buffering · low-latency systems</p>
+<p><strong>Networking / Backend:</strong> WebRTC · UDP · TCP · WebSockets · Socket.IO · REST APIs · MongoDB · Opus · RTP MIDI · OSC · real-time communication · cloud deployment</p>
+<p><strong>Systems / Hardware:</strong> macOS native integration · Objective-C++ bridging · Apple frameworks · MIDI SysEx · AVFoundation · Core ML · Apple Neural Engine · IOKit / IOUSBHost · shared memory · USB devices · multitouch · cameras · sensors · Developer ID signing · Hardened Runtime · notarization</p>
+<p><strong>ML / Deep Learning / Computer Vision:</strong> Neural audio processing · BS-RoFormer · Demucs · MossFormer2 · ECAPA speaker embeddings · target-speaker extraction · speaker enrollment / identity tracking · CLAP/audio embeddings · classification · similarity retrieval · Core ML · MLX · MediaPipe Tasks Vision · ARKit · Depth Anything · AprilTag · real-time face/landmark tracking · model deployment, distillation and optimisation</p>
+<p><strong>Interactive / Evaluation:</strong> Three.js · interactive graph interfaces · benchmark design · profiling · scaling tests · parity/regression testing · experimental evaluation</p>
+<p><strong>Cross-Platform Build Engineering:</strong> macOS Apple Silicon &amp; Intel · Windows x64 / ARM64 · cross-architecture toolchains · conditional compilation · CMake · release packaging</p>
+<p><strong>Research / Tooling:</strong> performance benchmarking · WebAssembly · WebGL · native SDK integration · deployment and licensing systems</p>
+<h2 id="experience">Professional Experience</h2>
+<details class="project"><summary><span>Founder &amp; Audio Software Developer — VSTOPIA</span><b>Explore</b></summary><div class="project-body">
+<p>Founded and developed an independent ecosystem for music-production software, Max for Live devices and plug-ins. Work includes audio-software/product development, technical architecture, backend/web infrastructure, developer onboarding and distribution, licensing/update systems, deployment, commercial delivery and long-term support.</p>
+</div></details>
+<details class="project"><summary><span>Independent Audio Software Developer — OSTIN SOLO</span><b>Explore</b></summary><div class="project-body">
+<p>Designer and developer of commercial Max for Live tools, plug-ins and experimental music technology spanning DSP, machine-learning-assisted processing, hardware controllers, MIDI/MPE systems, computer vision, networked audio and interactive audio-visual technology.</p>
+</div></details>
+<h2 id="native-engineering">Native Max/MSP Externals &amp; Plug-in Engineering</h2>
+<p>A major current engineering direction is the migration of earlier <strong>Max for Live prototypes into native C++ Max/MSP externals and conventional plug-in/application targets</strong>. This work moves core functionality out of patch-level implementations and into reusable native components, with selected systems being developed toward <strong>VST3, Audio Unit and standalone</strong> builds through JUCE/native C++ architectures.</p>
+<details class="project"><summary><span>RoFormer Native External &amp; Plug-in Runtime — Work in Progress</span><b>Explore</b></summary><div class="project-body">
+<p><strong>C++ · Max SDK · JUCE · VST3/AU · MLX · BS-RoFormer · Real-Time Neural Audio</strong></p>
+<p>Developing a native Max/MSP external and plug-in-oriented C++ runtime integrating BS-RoFormer source separation for real-time / near-real-time musical use. The work targets <strong>six-stem neural separation</strong> in Max/MSP and an in-development <strong>VST3/AU architecture</strong>, built around native MLX C++ inference, model/runtime optimisation, buffering and Apple Silicon performance engineering.</p>
+</div></details>
+<details class="project"><summary><span>Depth Anything / Computer-Vision Externals</span><b>Explore</b></summary><div class="project-body">
+<p><strong>C++ · Max/Jitter · Core ML · Apple Neural Engine · Depth Anything V2 · AprilTag</strong></p>
+<p>Developed native Max/Jitter computer-vision externals including <code>jit.depthanything</code>, bringing Depth Anything V2 inference directly into Jitter through Core ML / Apple Neural Engine execution. Related native components cover AprilTag detection, depth/geometry processing and camera-to-projection workflows.</p>
+</div></details>
+<details class="project"><summary><span>OpenMultitouch / Klic Native External Family</span><b>Explore</b></summary><div class="project-body">
+<p><strong>C++ · Max SDK · Multitouch · Hardware APIs · MPE · macOS / Windows</strong></p>
+<p>Developed a family of native Max/MSP externals that expose multitouch input and computer hardware/sensor data directly to musical applications. Rather than a single Max object, the native package includes several purpose-built externals:</p>
+<p class="bullet">• <strong><code>klic</code></strong> — multitouch capture and raw touch data with pressure/gesture information and MPE-oriented musical mapping.</p>
+<p class="bullet">• <strong><code>klic.ui</code></strong> — visual/instrument-oriented multitouch interface supporting expressive piano/drum-pad style interaction.</p>
+<p class="bullet">• <strong><code>lidangle</code></strong> — native access to MacBook display/hinge angle for mapping physical computer movement into musical or interactive control.</p>
+<p class="bullet">• <strong><code>gyroscope</code></strong> — three-axis gyroscope/sensor data exposed to Max for continuous control and interaction.</p>
+<p class="bullet">• <strong><code>accelerometer</code></strong> — accelerometer data, including orientation-derived roll/pitch information for musical mapping.</p>
+<p>The work spans native hardware communication, multitouch state management, pressure and gesture processing, MPE voice allocation and platform-specific macOS/Windows integration.</p>
+</div></details>
+<details class="project"><summary><span>Native macOS Integration &amp; Runtime Bridging</span><b>Explore</b></summary><div class="project-body">
+<p><strong>C · C++ · Objective-C++ · Max SDK · Apple Frameworks · Hardware APIs · Native ML Runtimes</strong></p>
+<p>Developed native bridge layers that connect reusable C/C++ engines to the Max SDK and to platform-specific macOS services. This includes Objective-C++ bridge layers where C++ systems need to cross into Apple frameworks, C-compatible wrapper boundaries around native components, and host-facing glue used to expose low-level functionality safely through Max externals.</p>
+<p>Built platform-specific integration for hardware, sensors and operating-system services using native Apple APIs, including communication paths that sit below the Max patching layer. The same bridging approach allows DSP, computer-vision, multitouch and hardware-control engines to remain primarily C/C++ while selectively accessing macOS-specific frameworks where required.</p>
+<p>Designed runtime/resource layouts for distributing machine-learning systems with Max externals, including model discovery/loading, native inference dependencies and bridges between Max object lifecycles, C++ inference code and platform runtimes. This work supports moving ML functionality from research executables into deployable musical-software components rather than treating the model as an external standalone process.</p>
+<p>As an <strong>Apple Developer Program member</strong>, handles the direct-distribution workflow for macOS audio software, including <strong>Developer ID code signing, Hardened Runtime configuration and Apple notarization</strong> for independently distributed plug-ins, applications and native components.</p>
+</div></details>
+<details class="project"><summary><span>MPE Externals</span><b>Explore</b></summary><div class="project-body">
+<p><strong>C++ · Max/MSP · MIDI Polyphonic Expression · Multitouch</strong></p>
+<p>Developed native MPE-oriented Max externals that translate multitouch interaction into polyphonic expressive musical control, including independent per-note dimensions, voice allocation and continuous gesture mapping. Per-touch state is maintained across the complete note lifecycle so expressive dimensions can remain associated with the correct musical voice.</p>
+</div></details>
+<details class="project"><summary><span>MPE VST3 / AU Instrument — In Development</span><b>Explore</b></summary><div class="project-body">
+<p><strong>C++ · JUCE · VST3 · Audio Unit · MPE · Expressive UI · Logic Pro Integration</strong></p>
+<p>Developing a native JUCE/C++ plug-in that extends the OpenMultitouch/Klic interaction system beyond Max and Max for Live into a DAW-independent <strong>MPE performance tool</strong>. The plug-in reuses the native touch-capture, voice-allocation and MPE-mapping architecture while providing a dedicated multidimensional expressive interface inspired by modern continuous-touch instruments.</p>
+<p>The MIDI architecture assigns and maintains <strong>per-voice MPE channels</strong> so that note-on, pitch bend, pressure, timbral/continuous control and note-off events remain associated with the same touch/voice throughout a gesture.</p>
+<p>Logic Pro required additional host-specific engineering because its multichannel/MPE handling can conflict with unrestricted per-note channel routing. A dedicated <strong>MIDI channel filtering/routing strategy</strong> was therefore developed to constrain the active MPE channel range and isolate the required per-voice traffic, preventing unintended simultaneous note triggering and channel collisions inside Logic. This host-specific compatibility layer sits alongside the core C++ MPE engine rather than changing the underlying expressive-control model.</p>
+<p><strong>VST3 and Audio Unit</strong> are the primary plug-in targets, with standalone deployment possible from the same JUCE/native architecture.</p>
+</div></details>
+<details class="project"><summary><span>Native Product Transition</span><b>Explore</b></summary><div class="project-body">
+<p>The broader product-engineering direction is increasingly <strong>Max for Live → native Max external → VST3/AU/standalone</strong>, choosing the appropriate target per project. This includes extracting reusable DSP, ML inference, hardware interaction and expressive-control layers into C++ components that can be shared across hosts and products.</p>
+</div></details>
+<h2 id="architecture">Portfolio Architecture</h2>
+<section class="architecture">
+<p class="architecture-intro">A compact view of how the portfolio connects across native audio engineering, machine learning, interaction, computer vision, networked systems and production infrastructure.</p>
+<div class="arch-grid">
+<div class="arch-root">OSTIN SOLO <span style="display:block;font-size:13px;font-weight:500;color:var(--muted)">Audio × Software × ML × Interactive Systems</span></div>
+<div class="arch-card"><strong>Audio ML &amp; DSP</strong><span>DSm · Voice Isolation · SoundCloner · RoFormer · Sample-Space<br>Source separation · speaker conditioning · synthesis · embeddings · evaluation</span></div>
+<div class="arch-card"><strong>Native C++ &amp; Plug-ins</strong><span>Max SDK · Objective-C++ · JUCE<br>VST3 · AU · MPE · native runtimes</span></div>
+<div class="arch-card"><strong>Voice / AI</strong><span>ASA · Voice Isolation → Denoising → VAD → STT → LLM / Agent → DAW<br>Local inference · automation · HCI</span></div>
+<div class="arch-card"><strong>Vision / Interaction</strong><span>Klic · Depth Anything · AprilTag<br>iOS/Swift · sensors · projection</span></div>
+<div class="arch-card"><strong>Cloud / Web / Platform</strong><span>VSTOPIA · Max Web · Three.js<br>Backend · licensing · deployment</span></div>
+<div class="arch-card"><strong>Networked Audio</strong><span>AUDIOENCE — WebRTC · Audio/MIDI · DAW sync<br>Max/Jitter UDP/TCP Audio Streaming — Node.js</span></div>
+</div>
+<p class="maplink"><a href="#technical-work">Explore projects in this portfolio ↓</a></p>
+</section>
+<h2 id="technical-work">Selected Technical Work</h2>
+<details class="project"><summary><span>Web-Based Max/MSP Environment — Work in Progress</span><b>Explore</b></summary><div class="project-body">
+<p><strong>Max/MSP · RNBO · JavaScript · Web Technologies · Interactive Graphs · Rendering · Automated Testing</strong></p>
+<p>Developing a browser-based environment aimed at representing and recreating core <strong>Max/MSP patching workflows on the web</strong>. The work goes substantially beyond documentation browsing: it models Max objects and their relationships as a connected system, represents patch-style object graphs in an interactive browser interface, and investigates how native Max behaviours can be reproduced faithfully in a web runtime.</p>
+<p class="maplink"><a href="https://ostinsolo.github.io/max-object-network-demo/" target="_blank" rel="noopener">Open Public Demo — Static Preview ↗</a></p>
+<p><strong>Demo scope:</strong> The public GitHub Pages build exposes the interactive 3D object graph, search/filtering, Inspector/reference data and reconstructed Help Patch viewer. It is intentionally non-executable: Max/MSP message logic, MSP/DSP audio processing, Jitter processing and Max for Live/Ableton control are disabled in this demo while the full runtime remains in development.</p>
+<p>Engineering and research include:</p>
+<p class="bullet">• Parsing and structuring Max object/documentation data into a machine-readable relationship graph.</p>
+<p class="bullet">• Interactive object and connection graphs for navigating the Max ecosystem and patch structures.</p>
+<p class="bullet">• Browser-side representation of object boxes, connections and patching interactions.</p>
+<p class="bullet">• Max/RNBO compatibility and web-export analysis.</p>
+<p class="bullet">• Reconstruction of UI/rendering behaviour for web presentation.</p>
+<p class="bullet">• Automated visual comparison and <strong>pixel-parity testing</strong> to measure rendering fidelity.</p>
+<p class="bullet">• Behavioural and regression testing rather than relying only on manual visual inspection.</p>
+<p class="bullet">• Investigation of how Max-style workflows can be represented across native and browser execution environments.</p>
+<p>The long-term objective is a <strong>web-accessible Max/MSP-style environment</strong> capable of preserving recognisable patching concepts and workflows while exploiting browser-native interaction, visualisation and deployment.</p>
+</div></details>
+<details class="project"><summary><span>Audio Intelligence &amp; Sample-Space Exploration System</span><b>Explore</b></summary><div class="project-body">
+<p><strong>C++ · Python · CLAP / Audio Embeddings · Classification · Similarity Retrieval · Three.js · DSP · Evaluation Engineering</strong></p>
+<p>Developing an R&amp;D system for automatic analysis, classification and interactive navigation of large audio/sample collections. Rather than treating samples as files organised only by folders or metadata, the system builds a machine-derived audio space that can be explored through <strong>similarity, learned embeddings, classifiers and perceptual/musical descriptors</strong>.</p>
+<p>The project combines:</p>
+<p class="bullet">• <strong>CLAP/audio-embedding research</strong> and classifier training for semantic/perceptual audio categorisation.</p>
+<p class="bullet">• Similarity and retrieval systems for locating related sounds in learned feature spaces.</p>
+<p class="bullet">• An interactive <strong>Three.js graph / spatial interface</strong> for visually exploring relationships between samples.</p>
+<p class="bullet">• Audio-analysis and DSP pipelines covering extraction, onset/slicing, loop analysis, corpus construction and scoring.</p>
+<p class="bullet">• Native C++ migration and parity work for performance-critical stages.</p>
+<p class="bullet">• Formal benchmarks, profiling and scaling studies across pipeline components.</p>
+<p class="bullet">• Case studies, controlled comparisons and evaluation metrics used to measure progress between implementations and guide subsequent engineering decisions.</p>
+<p>A central part of the project is <strong>evaluation engineering</strong>: building baselines, measuring accuracy/performance, identifying bottlenecks and using experimental results to decide which models, representations and native implementations should be pursued next.</p>
+</div></details>
+<details class="project"><summary><span>OpenMultitouch / Klic</span><b>Explore</b></summary><div class="project-body">
+<p><strong>C++ · Max/MSP Externals · Hardware Integration · Multitouch · MPE</strong></p>
+<p>Developed native Max externals exposing multitouch hardware and computer sensor data to musical applications. Work includes pressure handling, MPE voice allocation, trackpad-to-instrument mapping, Apple Silicon motion-sensor access, lid angle, gyroscope/accelerometer data, macOS/Windows implementations and native C++ work extended into JUCE/VST3 research.  </p>
+<p><strong>Evidence:</strong> <a href="https://ostinsolo.co.uk/devices" target="_blank" rel="noopener">OpenMultitouch Externals</a> · <a href="https://ostinsolo.co.uk/devices" target="_blank" rel="noopener">OSTIN SOLO product catalogue</a></p>
+</div></details>
+<details class="project"><summary><span>Split Wizard+ → DSm — Dynamic Split Module</span><b>Explore</b></summary><div class="project-body">
+<p><strong>Audio DSP · Neural Source Separation · Max for Live · Audio ML</strong></p>
+<p>Developed <strong>Split Wizard+</strong>, a Demucs/Hybrid Transformer-based Max for Live stem-separation system integrated directly into Ableton Live by 2023, before stem separation became a native Ableton Live feature.</p>
+<p>The released project evolved into <strong>DSm — Dynamic Split Module</strong> by merging and substantially extending two earlier product lines: <strong>Split Wizard+</strong>, focused on neural source separation, and <strong>YouTube 4 Live</strong>, focused on web-based audio discovery and sampling inside Ableton Live. DSm unifies those ideas into a broader neural audio-processing, web-sampling and model-driven workflow supporting multiple separation architectures and restoration tools inside Ableton Live / Max for Live.</p>
+<p>The work has been covered by specialist music-technology publications including <strong>Sound On Sound</strong> and <strong>Gearnews</strong>.  </p>
+<p><strong>Evidence:</strong> <a href="https://vstopia.com/max-for-live-devices/dynamic-split-module" target="_blank" rel="noopener">Official product</a> · <a href="https://cycling74.com/projects/dynamic-split-module-websampler-with-63-audio-separation-models-in-ableton-1" target="_blank" rel="noopener">Cycling ’74 project</a> · <a href="https://www.soundonsound.com/news/vstopia-announce-dynamic-split-module-ableton" target="_blank" rel="noopener">Sound On Sound coverage</a></p>
+</div></details>
+<details class="project"><summary><span>AUDIOENCE — Networked Real-Time Audio &amp; DAW Synchronisation</span><b>Explore</b></summary><div class="project-body">
+<p><strong>C++ · JUCE · WebRTC · Real-Time Audio · MIDI · Cross-Platform Systems</strong></p>
+<p>Developed a collaborative audio plug-in architecture for synchronising audio, MIDI and DAW timing across networked music-production systems.</p>
+<p>Engineering includes WebRTC bidirectional audio, Opus, RTP MIDI, beat-phase-aware buffering, DAW synchronisation, adaptive prebuffering, jitter compensation, underrun recovery, remote audio/MIDI timing alignment, sample-rate conversion, circular/ring buffers, real-time <code>processBlock()</code> integration and JavaScript↔native C++ communication.</p>
+<p>Platform-specific development covers <strong>Apple Silicon macOS, Intel macOS and Windows</strong>, with dedicated compatibility work including a <strong>WebGL 1 fallback path</strong>.  </p>
+<p><strong>Evidence:</strong> <a href="https://vstopia.com/audioence" target="_blank" rel="noopener">AUDIOENCE official page</a> · <a href="https://vstopia.com/audioence-manual" target="_blank" rel="noopener">Technical manual</a></p>
+</div></details>
+<details class="project"><summary><span>Max/MSP UDP/TCP Audio Streaming &amp; Voice Processing</span><b>Explore</b></summary><div class="project-body">
+<p><strong>Max/MSP · Jitter · Node.js · UDP · TCP · Float32 Audio · Vosk</strong></p>
+<p>Developed and published a standalone reference implementation for low-latency audio transport from <strong>Max/MSP or Ableton Live to Node.js</strong>. Audio is captured through Max/Jitter as Float32 matrices, transmitted over UDP (with a separate TCP path), decoded and buffered in Node.js, and can be routed into Vosk-based speech recognition or other downstream audio processing.</p>
+<p>The public repository includes dedicated UDP sender/receiver scripts, TCP transport, audio-buffer management and Max/Node integration examples. <strong>Evidence:</strong> <a href="https://github.com/ostinsolo/MaxMSP-Audio-via-UDP-for-voice-recognition" target="_blank" rel="noopener">MaxMSP Audio via UDP for Voice Recognition</a>.</p>
+</div></details>
+<details class="project"><summary><span>VSTOPIA / AUDIOENCE Realtime Backend</span><b>Explore</b></summary><div class="project-body">
+<p><strong>TypeScript · Node.js · WebSockets · MongoDB · WebRTC · Cloud Infrastructure</strong></p>
+<p>Designed and developed production backend infrastructure supporting networked VSTOPIA/AUDIOENCE services: REST APIs, Socket.IO/WebSockets, geolocated public/private rooms, end-to-end encrypted private messaging, audio/MIDI file transfer, MongoDB Atlas data modelling and geospatial queries, indexing, automated message/room/file lifecycle management, WebRTC/WebTorrent integration, cloud media/avatar infrastructure, Heroku deployment, credential management and production debugging.</p>
+</div></details>
+<details class="project"><summary><span>Depth Anything / Native Computer Vision</span><b>Explore</b></summary><div class="project-body">
+<p><strong>C++ · Max/Jitter · Core ML · Computer Vision · Apple Neural Engine</strong></p>
+<p>Developed a Max/Jitter package integrating native real-time computer vision directly into Max, including Depth Anything V2 via Core ML/ANE, native AprilTag detection from Jitter matrices, projection-mask/mesh-warp editing and real-time camera/projection workflows.</p>
+</div></details>
+<details class="project"><summary><span>MakeUp App — iOS Real-Time Computer Vision R&amp;D</span><b>Explore</b></summary><div class="project-body">
+<p><strong>Swift · SwiftUI · iOS · ARKit · SceneKit · AVFoundation · MediaPipe Tasks Vision · Real-Time Computer Vision</strong></p>
+<p>Developed an iOS computer-vision application for <strong>real-time guided physical makeup</strong>, using live camera input and facial landmark tracking to align makeup guidance/effects with the user’s face. The project extends the portfolio beyond desktop/audio systems into native mobile development and on-device vision workloads.</p>
+<p>Engineering work includes a native <strong>Swift/SwiftUI</strong> application architecture, ARKit/SceneKit camera and overlay integration, AVFoundation-based camera workflows, MediaPipe Tasks Vision integration, real-time facial/eye landmark processing and experiments with model-driven vision on Apple mobile hardware. The eyeliner MVP was developed through iterative simulator and physical-device validation, including TrueDepth/device-specific testing of camera, landmark and overlay behaviour.</p>
+</div></details>
+<details class="project"><summary><span>SoundCloner</span><b>Explore</b></summary><div class="project-body">
+<p><strong>C++ · DSP · Synthesis · Audio Analysis · Machine Learning</strong></p>
+<p>Research platform for reconstructing synthesiser sounds from reference audio. Built around a deterministic native C++ synthesis engine with oscillators, envelopes, modulation, saturation, EQ, reverb, soft clipping and real-time-safe processing. The wider system combines procedural sound generation, parameter/genome representations, similarity scoring, candidate retrieval, search/optimisation, ML parameter inference and large synthetic training/rendering infrastructure. The research process uses controlled experiments, retrieval metrics, benchmark sets and measured comparisons to evaluate successive architectures rather than relying on qualitative listening alone.</p>
+</div></details>
+<details class="project"><summary><span>RoFormer Realtime / Neural Audio Optimisation — External &amp; Plug-in R&amp;D</span><b>Explore</b></summary><div class="project-body">
+<p><strong>C++ · MLX · BS-RoFormer · Audio Source Separation · Performance Engineering</strong></p>
+<p>Developed and benchmarked the native MLX C++ BS-RoFormer runtime used for the <strong>Max/MSP external and in-development VST3/AU work</strong>, including native model execution, transformer inference, fast attention paths, memory optimisation, benchmark/regression infrastructure and real-time/near-real-time deployment research. These measurements refer to the native external/plug-in R&amp;D, <strong>not to the released DSm product</strong>.</p>
+<p><strong>Measured performance:</strong> Across tested Apple Silicon workloads, native C++/MLX optimisation achieved a <strong>median 1.85× speedup</strong>, reaching <strong>2.5× on MelBand RoFormer</strong> while preserving validated output parity. Native MLX C++ six-stem BS-RoFormer maintained <strong>bit-exact parity with the Python MLX reference</strong> and achieved <strong>RTF ≈ 0.36 (~2.8× real time)</strong> on an <strong>Apple M4 Pro</strong>.</p>
+</div></details>
+<details class="project"><summary><span>Real-Time Target-Speaker Voice Isolation — R&amp;D</span><b>Explore</b></summary><div class="project-body">
+<p><strong>MossFormer2 · ECAPA · Target-Speaker Extraction</strong></p>
+<p>Developed a real-time system that learns a target speaker profile and suppresses competing voices using neural source separation and speaker embeddings.</p>
+</div></details>
+<details class="project"><summary><span>Multi-Camera / AprilTag Performance Engine</span><b>Explore</b></summary><div class="project-body">
+<p><strong>C++20 · AVFoundation · IOUSBHost · AprilTag · OSC · Shared Memory</strong></p>
+<p>Developed a standalone multi-camera engine with independent camera workers, AVFoundation/direct USB capture, POSIX shared-memory frame transport, native AprilTag detection, OSC output, latest-frame-only processing, camera identity/reconnection logic and performance/backend testing.</p>
+</div></details>
+<details class="project"><summary><span>ASA — Voice-Controlled Ableton / Computer Assistant</span><b>Explore</b></summary><div class="project-body">
+<p><strong>Voice Interfaces · Ableton Live · Automation · Human–Computer Interaction</strong></p>
+<p>Developed an early voice-controlled system for Ableton Live and general computer workflows. The project attracted direct interest from <strong>Ableton</strong>, leading to technical discussions and project review under NDA. Ableton ultimately pursued a different design approach and no commercial collaboration resulted.</p>
+</div></details>
+<details class="project"><summary><span>Commercial Software Deployment &amp; Licensing Infrastructure</span><b>Explore</b></summary><div class="project-body">
+<p><strong>Max · Automation · Licensing · Cryptography · Software Updates</strong></p>
+<p>Developed private infrastructure for processing, packaging and deploying commercial Max for Live software, including automated device workflows, licensing integration, protected distribution, update delivery, packaging, server integration, per-install identity research and signed update manifests.</p>
+</div></details>
+<section><h2 id="validation">Benchmarking, Validation &amp; Cross-Platform Test Methodology</h2><p>Testing and evaluation are treated as an engineering discipline across projects rather than as project-specific completion metrics.</p><ul><li><strong>Controlled benchmarks:</strong> repeatable corpora, fixed conditions, baselines and before/after comparisons.</li><li><strong>Performance profiling:</strong> latency, throughput, memory/runtime behaviour and scaling tests.</li><li><strong>Cross-machine validation:</strong> Apple Silicon, Intel Mac and Windows systems, with MPS, CUDA and CPU paths where supported.</li><li><strong>Cross-platform / host validation:</strong> Max/MSP, VST3/AU, DAW-specific constraints, iOS simulator and physical-device testing.</li><li><strong>Regression and parity testing:</strong> automated and manual behavioural checks across implementations and runtimes.</li><li><strong>ML evaluation:</strong> held-out datasets, retrieval metrics, best-of-K comparisons, controlled experiments and ablation-style investigations.</li><li><strong>Hardware-in-the-loop:</strong> cameras, multitouch devices, sensors and projection systems tested on real hardware.</li></ul></section><h2 id="additional-rd">Additional Software &amp; R&amp;D Projects</h2>
+<p class="bullet">• <strong>MagicTrackpad MPE:</strong> Polyphonic expressive instrument translating multitouch position, pressure and gestures into MPE; native Max external work now extending into VST3/AU plug-in development.</p>
+<p class="bullet">• <strong>Preview Tuner:</strong> Pitch-analysis/sample-tuning utility developed from a production-workflow concept by <strong>Connor Patrick McDonough</strong>, a multi-platinum, ASCAP award-winning songwriter/producer with three #1 records. <a href="https://www.mcdonoughproductions.com/" target="_blank" rel="noopener">Official site</a> · <a href="https://www.artistpg.com/producers/connormcdonough" target="_blank" rel="noopener">APG industry profile</a></p>
+<p class="bullet">• <strong>Harmodulum / Pendolo:</strong> Physics-driven generative musical systems in Max/MSP. <strong>Evidence:</strong> <a href="https://cycling74.com/projects/pendolo" target="_blank" rel="noopener">Cycling ’74 — Pendolo</a>.</p>
+<p class="bullet">• <strong>Web Player VST3 (unreleased R&amp;D):</strong> JUCE/VST3 media-player architecture combining web-based discovery/interface layers with native plug-in playback, networking, embedded WebView integration and provider abstraction.</p>
+<p class="bullet">• <strong>Real-Time Multimedia VST3 R&amp;D:</strong> JUCE/VST3 architecture involving lock-free FIFO systems and audio/video synchronisation.</p>
+<p class="bullet">• <strong>Audio-to-MIDI research:</strong> Automatic transcription, onset analysis and structured musical-information extraction.</p>
+<p class="bullet">• <strong>Envelope-Matched Noise Reduction:</strong> STFT-based adaptive denoising for amplitude-correlated noise.</p>
+<p class="bullet">• <strong>Projection Mapping / Interactive Performance Systems:</strong> Computer vision, AprilTags, cameras, projection mapping and audience interaction.</p>
+<p class="bullet">• <strong>Voice-Controlled Ableton research:</strong> Local STT, language models, agents and DAW-control architectures.</p>
+<h2 id="web-platform">Web / Platform Engineering</h2>
+<details class="project"><summary><span>VSTOPIA Web Platform</span><b>Explore</b></summary><div class="project-body">
+<p>Designed and developed web infrastructure supporting VSTOPIA&#x27;s commercial software ecosystem, including product presentation, developer/distribution workflows, software delivery, user-facing services and backend integration.</p>
+<p>The wider platform history includes production web/backend work across Laravel, Node/Express, React/TypeScript, PostgreSQL, Docker, Hetzner/Traefik infrastructure and licensing/update services. AUDIOENCE&#x27;s realtime production backend uses Heroku + MongoDB and is kept distinct from VSTOPIA&#x27;s primary hosting architecture.</p>
+</div></details>
+<h2 id="track-record">Commercial / Industry Track Record</h2>
+<p class="bullet">• Founder and developer of <strong>VSTOPIA</strong>.</p>
+<p class="bullet">• Developer of the <strong>OSTIN SOLO</strong> catalogue of commercial music-production software.</p>
+<p class="bullet">• Experience taking projects from experimental R&amp;D through production, packaging, deployment, licensing, updates and support.</p>
+<p class="bullet">• Software used by professional producers and musicians.</p>
+<p class="bullet">• Developed <strong>Preview Tuner</strong> from a workflow concept by multi-platinum producer/songwriter <strong>Connor Patrick McDonough</strong>.</p>
+<p class="bullet">• Direct technical interaction with <strong>Ableton</strong> following its interest in the ASA voice-control project.</p>
+<p class="bullet">• Audio-software work covered by specialist publications including <strong>Sound On Sound</strong> and <strong>Gearnews</strong>.</p>
+<p class="bullet">• Production backend/cloud infrastructure experience alongside native audio applications.</p>
+<h2 id="interests">Areas of Particular Interest</h2>
+<p>Digital musical hardware · Embedded/constrained audio systems · Max/MSP · RNBO · Native C++ DSP · Hardware/software integration · New musical interfaces · Real-time audio · Networked music systems · Spatial/interactive audio · Interactive graph systems · Audio embeddings/classification · target-speaker extraction · speaker-conditioned audio · computer vision for musical interaction · Audio ML · Native neural-audio deployment · Experimental evaluation · Performance optimisation · Cross-platform audio systems</p>
+</main>
+<script>
+(() => {
+  const supported = ['en','it','es','de','fr','zh','ja'];
+  const languageNames = {en:'English',it:'Italiano',es:'Español',de:'Deutsch',fr:'Français',zh:'中文',ja:'日本語'};
+  const normalize = value => value.replace(/\s+/g,' ').trim();
+  const titleOriginal = document.title;
+  const textRecords = [];
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  let node;
+  while ((node = walker.nextNode())) {
+    const parent = node.parentElement;
+    if (!parent || parent.closest('script,style,code,.language-switcher')) continue;
+    const key = normalize(node.nodeValue || '');
+    if (!key) continue;
+    textRecords.push({node, original:node.nodeValue, key});
+  }
+  const uiLabels = {
+    en:{open:'Open site navigation',close:'Close site navigation'},
+    it:{open:'Apri navigazione del sito',close:'Chiudi navigazione del sito'},
+    es:{open:'Abrir navegación del sitio',close:'Cerrar navegación del sitio'},
+    de:{open:'Seitennavigation öffnen',close:'Seitennavigation schließen'},
+    fr:{open:'Ouvrir la navigation du site',close:'Fermer la navigation du site'},
+    zh:{open:'打开网站导航',close:'关闭网站导航'},
+    ja:{open:'サイトナビゲーションを開く',close:'サイトナビゲーションを閉じる'}
+  };
+  const cache = {en:{}};
+  const preserveWhitespace = (original, translated) => {
+    const lead = (original.match(/^\s*/) || [''])[0];
+    const trail = (original.match(/\s*$/) || [''])[0];
+    return lead + translated + trail;
+  };
+  async function loadDictionary(lang) {
+    if (lang === 'en') return {};
+    if (cache[lang]) return cache[lang];
+    const response = await fetch(`translations/${lang}.json`, {cache:'force-cache'});
+    if (!response.ok) throw new Error(`Translation load failed: ${lang}`);
+    cache[lang] = await response.json();
+    return cache[lang];
+  }
+  async function applyLanguage(lang, updateUrl=true) {
+    if (!supported.includes(lang)) lang='en';
+    let dict={};
+    try { dict=await loadDictionary(lang); }
+    catch (error) { console.warn(error); lang='en'; dict={}; }
+    for (const record of textRecords) {
+      if (lang === 'en') record.node.nodeValue=record.original;
+      else {
+        const translated=dict[record.key];
+        record.node.nodeValue=translated ? preserveWhitespace(record.original, translated) : record.original;
+      }
+    }
+    document.title = lang === 'en' ? titleOriginal : (dict[titleOriginal] || titleOriginal);
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
+    document.querySelectorAll('.lang-button').forEach(button => {
+      button.setAttribute('aria-pressed', String(button.dataset.lang===lang));
+    });
+    const cvLink=document.querySelector('.download-cv');
+    if (cvLink) {
+      cvLink.href=`cv/Agostino_Scalzullo_CV_${lang}.pdf`;
+      cvLink.setAttribute('download', `Agostino_Scalzullo_CV_${lang}.pdf`);
+    }
+    const menuButton=document.querySelector('.site-menu-button');
+    const open=document.body.classList.contains('menu-open');
+    if (menuButton) menuButton.setAttribute('aria-label', uiLabels[lang][open?'close':'open']);
+    localStorage.setItem('portfolioLanguage',lang);
+    if (updateUrl) {
+      const url=new URL(location.href);
+      if (lang==='en') url.searchParams.delete('lang'); else url.searchParams.set('lang',lang);
+      history.replaceState(null,'',url.pathname + (url.searchParams.toString() ? '?' + url.searchParams.toString() : '') + url.hash);
+    }
+    window.portfolioLanguage=lang;
+  }
+  document.querySelectorAll('.lang-button').forEach(button => {
+    button.addEventListener('click',()=>applyLanguage(button.dataset.lang,true));
+  });
+  const params=new URLSearchParams(location.search);
+  const requested=params.get('lang');
+  const saved=localStorage.getItem('portfolioLanguage');
+  const browser=(navigator.language || 'en').toLowerCase().split('-')[0];
+  const initial = supported.includes(requested) ? requested : supported.includes(saved) ? saved : supported.includes(browser) ? browser : 'en';
+  applyLanguage(initial,false);
+  window.applyPortfolioLanguage=applyLanguage;
+})();
+</script>
+<script>
+(() => {
+  const button = document.querySelector('.site-menu-button');
+  const panel = document.querySelector('.site-menu-panel');
+  const overlay = document.querySelector('.site-menu-overlay');
+  const setOpen = (open) => {
+    document.body.classList.toggle('menu-open', open);
+    button.setAttribute('aria-expanded', String(open));
+    const labels={en:['Open site navigation','Close site navigation'],it:['Apri navigazione del sito','Chiudi navigazione del sito'],es:['Abrir navegación del sitio','Cerrar navegación del sitio'],de:['Seitennavigation öffnen','Seitennavigation schließen'],fr:['Ouvrir la navigation du site','Fermer la navigation du site'],zh:['打开网站导航','关闭网站导航'],ja:['サイトナビゲーションを開く','サイトナビゲーションを閉じる']};
+    const lang=window.portfolioLanguage || 'en';
+    button.setAttribute('aria-label', (labels[lang] || labels.en)[open ? 1 : 0]);
+  };
+  button.addEventListener('click', () => setOpen(!document.body.classList.contains('menu-open')));
+  overlay.addEventListener('click', () => setOpen(false));
+  panel.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setOpen(false)));
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') setOpen(false); });
+})();
+</script>
+</body></html>

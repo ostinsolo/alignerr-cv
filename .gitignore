@@ -1,0 +1,35 @@
+# OS junk
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+Desktop.ini
+
+# Editor / IDE
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.code-workspace
+
+# Local document variants
+*_Final.docx
+*_Professional.docx
+*_Updated.docx
+*_preformat.docx
+
+# Archives and secrets
+*.zip
+*.env
+.env*
+*secret*
+*token*
+*credentials*
+*.pem
+*.key
+
+# Misc
+__pycache__/
+*.pyc
+node_modules/
