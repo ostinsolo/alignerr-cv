@@ -20,7 +20,7 @@ Founder of **VSTOPIA**, an independent platform for music-production software, a
 
 Work spans the complete engineering path from low-level hardware and operating-system APIs through native Max externals and DSP engines to VST3/AU plug-ins, networked audio systems, cloud infrastructure, deployment, licensing and commercial distribution.
 
-Alongside released products, maintains an extensive R&D portfolio covering **Max/RNBO systems, native DSP, neural audio processing, real-time source separation, computer vision, WebRTC, hardware protocols, interactive visual systems, audio embeddings/classification, empirical evaluation and custom developer tooling**.
+Alongside released products, maintains an extensive R&D portfolio covering **Max systems, RNBO architecture/export analysis, native DSP, neural audio processing, real-time source separation, computer vision, WebRTC, hardware protocols, interactive visual systems, audio embeddings/classification, empirical evaluation and custom developer tooling**.
 
 A recurring focus is turning experimental technologies into practical musical systems while using **benchmarks, controlled experiments, profiling and quantitative evaluation** to guide architecture and optimisation.
 
@@ -160,7 +160,7 @@ flowchart TB
 ## Selected Technical Work
 
 ### Web-Based Max/MSP Environment — Work in Progress
-**Max/MSP · RNBO · JavaScript · Web Technologies · Interactive Graphs · Rendering · Automated Testing**
+**Max/MSP · RNBO Architecture / Export Analysis · JavaScript · Web Technologies · Interactive Graphs · Rendering · Automated Testing**
 
 Developing a browser-based environment aimed at representing and recreating core **Max/MSP patching workflows on the web**. The work goes substantially beyond documentation browsing: it models Max objects and their relationships as a connected system, represents patch-style object graphs in an interactive browser interface, and investigates how native Max behaviours can be reproduced faithfully in a web runtime.
 
